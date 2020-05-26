@@ -1,5 +1,6 @@
 package com.cybertek.pages;
 
+import com.cybertek.utilities.ConfigurationReader;
 import com.cybertek.utilities.Driver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindAll;
@@ -20,7 +21,6 @@ public class LoginPage {
             @FindBy(id = "prependedInput"),
             @FindBy(name = "_username"),
     })
-
     public WebElement usernameInput;
 
     @FindBy(id = "prependedInput2")
@@ -30,8 +30,22 @@ public class LoginPage {
     public WebElement loginBtn;
 
     public void login(String usernameStr,String passwordStr){
+
         usernameInput.sendKeys(usernameStr);
         passwordInput.sendKeys(passwordStr);
         loginBtn.click();
+
     }
+
+    public void loginAsDriver(){
+        String username = ConfigurationReader.get("driver_username");
+        String password = ConfigurationReader.get("driver_password");
+        usernameInput.sendKeys(username);
+        passwordInput.sendKeys(password);
+        loginBtn.click();
+
+    }
+
+
+
 }
