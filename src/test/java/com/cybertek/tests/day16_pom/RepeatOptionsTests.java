@@ -84,7 +84,7 @@ public class RepeatOptionsTests extends TestBase {
 
         Select repeatDropdown = createCalendarEventsPage.repeatOptionsList();
 
-        List<String> expectedList = Arrays.asList("Daily","Weekly", "Monthly","Yearly");
+        List<String> expectedList = Arrays.asList("Daily", "Weekly", "Monthly","Yearly");
 
         List<WebElement> actualOptions = repeatDropdown.getOptions();
 
@@ -94,8 +94,8 @@ public class RepeatOptionsTests extends TestBase {
             //get the text of each webelement and add to list of string
             actualList.add(option.getText());
         }
-        //getting list with ready method (daha guzel asagidaki)
-//        List<String> actualList2 = BrowserUtils.getElementsText(actualOptions);
+        // another way of getting list with ready method (daha guzel asagidaki)
+        List<String> actualList2 = BrowserUtils.getElementsText(actualOptions);
 
         Assert.assertEquals(actualList,expectedList,"verify dropdown options");
 
