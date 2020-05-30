@@ -5,7 +5,6 @@ import org.openqa.selenium.support.FindBy;
 
 public class ContactInfoPage extends BasePage {
 
-
     @FindBy(css = "h1.user-name")
     public WebElement fullName;
 
@@ -14,5 +13,4 @@ public class ContactInfoPage extends BasePage {
 
     @FindBy(css = "a.phone")
     public WebElement phone;
-
 }
